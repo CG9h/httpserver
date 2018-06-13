@@ -1,6 +1,6 @@
 # include "hserver.hpp"
 # include<sstream>
-    Server::Server (const int port):out_file(out_file){
+    Server::Server (const int port){
             
             sfd = socket(AF_INET,SOCK_STREAM,0);
             server_addr.sin_family = AF_INET;
@@ -33,18 +33,11 @@
           if(sfd!=-1)
             {
                 cfd = accept(sfd,(struct sockaddr*)&client_addr,&c_len);
-                char *l=new char[WSIZE];
-                int len=0;
+               
                 while(1)
                 {
                     
-                      len=recv(cfd,l,sizeof(l),0);
-                      if(len<=0){
-                        break;
-                       }
-                              
-                      out_file.write(l,len);
-                      memset(l,0,len);
+                    
                               
                  }
                    
