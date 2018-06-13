@@ -10,7 +10,7 @@ using namespace std;
 # define WSIZE 1024*1024*10
 class Server {
 public:
-    Server(const int port, ofstream &out_file);
+    Server(const int port);
     ~Server();
     void run();
 private:
